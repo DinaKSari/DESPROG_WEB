@@ -18,3 +18,8 @@ h2{
     color: #fff;
     padding: 50px;
 }
+
+body{
+    background: lightcyan;
+    color: white;
+}
