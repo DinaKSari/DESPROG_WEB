@@ -18,3 +18,22 @@ body{
     box-sizing: border-box;
     display: flex;
 }
+
+.sidebar-satu{
+    width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+    
+}
+
+.kolom-utama{
+    margin: 20px;
+    width: 45%;
+    box-sizing: border-box;
+}
+
+.sidebar-dua{
+    width: 25%;
+    margin: 20px;
+    box-sizing: border-box;
+}
