@@ -1,5 +1,6 @@
 .link{
     font-size: 20pt;
+    color: chocolate;
     }
      
 .link:hover{
@@ -7,5 +8,9 @@
     }
 
 .link:link{
-    color: blue;
+    color: rgb(0, 47, 255);
     }
+
+.link:visited{
+    color: green;
+}
