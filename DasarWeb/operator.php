@@ -39,11 +39,16 @@ $hasilNotB = !$b;
 echo"hasil AND: $hasilAnd <br>";
 echo"hasil OR: $hasilOr<br>";
 echo"hasil NOT A: $hasilNotA <br>";
-echo"hasil NOT B: $hasilNotB <br>";
+echo"hasil NOT B: $hasilNotB <br><br>";
 //lanjuttt
 $a += $b;
+echo"nilai a: $a <br>";
 $a -= $b;
+echo"nilai a: $a <br>";
 $a *= $b;
+echo"nilai a: $a <br>";
 $a /= $b;
+echo"nilai a: $a <br>";
 $a %= $b;
+echo"nilai a: $a <br>";
 ?>
