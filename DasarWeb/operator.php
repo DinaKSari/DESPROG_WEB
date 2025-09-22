@@ -29,10 +29,15 @@ echo"hasil Tidak sama: $hasilTidakSama<br>";
 echo"hasil lebih kecil: $hasilLebihKecil <br>";
 echo"hasil lenih besar: $hasilLebihBesar <br>";
 echo"hasil lebih kecil sama: $hasilLebihKecilSama <br>";
-echo"hasil lebih besar sama: $hasilLebihBesarSama <br>";
+echo"hasil lebih besar sama: $hasilLebihBesarSama <br><br>";
 //lanjut
 $hasilAnd = $a && $b;
 $hasilOr = $a || $b;
 $hasilNotA = !$a;
 $hasilNotB = !$b;
+
+echo"hasil AND: $hasilAnd <br>";
+echo"hasil OR: $hasilOr<br>";
+echo"hasil NOT A: $hasilNotA <br>";
+echo"hasil NOT B: $hasilNotB <br>";
 ?>
