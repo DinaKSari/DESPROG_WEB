@@ -11,4 +11,6 @@ echo "variable benar: $benar, variabel salah: $salah";
 // mendefinisikan konstanta untuk nilai tetap
 define("NAMA_SITUS","WebsiteKu.com");
 define("TAHUN_PENDIRIAN",2023);
+
+echo "Selamatd datang di ". NAMA_SITUS. ", situs yang didirikan pada tahun " . TAHUN_PENDIRIAN. ".";
 ?>
