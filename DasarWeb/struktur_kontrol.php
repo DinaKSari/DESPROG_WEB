@@ -84,4 +84,6 @@ if ($poin > 500) {
 } else {
     $statusHadiah = "TIDAK";
 }
+echo "<br><br>Total skor pemain adalah: " . $poin . "<br>";
+echo "Apakah pemain mendapatkan hadiah tambahan? " . $statusHadiah;
 ?>
