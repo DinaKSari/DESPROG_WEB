@@ -18,5 +18,25 @@ foreach ($daftarKaryawan as $karyawan) {
     }
 }
 
-echo "Daftar karyawan dengan pengalaman kerja lebih dari 5 tahun: " . implode(', ', $karyawanPengalamanLimaTahun);
+echo "<br><br>Daftar karyawan dengan pengalaman kerja lebih dari 5 tahun: " . implode(', ', $karyawanPengalamanLimaTahun);
+//lanjutt
+$daftarNilai = [
+    'Matematika' => [
+        ['Alice', 85],
+        ['Bob', 92],
+        ['Charlie', 78],
+    ],
+    'Fisika' => [
+        ['Alice', 90],
+        ['Bob', 88],
+        ['Charlie', 75],
+    ],
+    'Kimia' => [
+        ['Alice', 92],
+        ['Bob', 80],
+        ['Charlie', 85],
+    ],
+];
+
+$mataKuliah = 'Fisika';
 ?>
