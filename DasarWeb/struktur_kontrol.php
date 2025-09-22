@@ -55,4 +55,5 @@ echo "<br>Total skor ujian adalah: $totalSkor";
 //tugas cerita
 $nilaiSiswa = [85, 92, 78, 64, 90, 75, 88, 79, 70, 96];
 sort($nilaiSiswa);
+$totalNilai = 0;
 ?>
