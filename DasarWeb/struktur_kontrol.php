@@ -51,7 +51,7 @@ foreach ($skorUjian as $skor) {
     $totalSkor += $skor;
 }
 
-echo "<br>Total skor ujian adalah: $totalSkor";
+echo "<br>Total skor ujian adalah: $totalSkor <br>";
 //tugas cerita
 $nilaiSiswa = [85, 92, 78, 64, 90, 75, 88, 79, 70, 96];
 sort($nilaiSiswa);
@@ -61,6 +61,12 @@ for ($i = 2; $i < count($nilaiSiswa) - 2; $i++) {
 }
 $rataRata = $totalNilai / 6;
 
-echo "Total nilai setelah mengabaikan dua nilai tertinggi dan terendah adalah: $totalNilai<br>";
+echo "<br>Total nilai setelah mengabaikan dua nilai tertinggi dan terendah adalah: $totalNilai<br>";
 echo "Nilai rata-rata yang digunakan adalah: $rataRata";
+
+//tugas cerita 2
+$hargaProduk = 120000;
+$syaratDiskon = 100000;
+$persenDiskon = 20;
+$hargaAkhir = $hargaProduk;
 ?>
