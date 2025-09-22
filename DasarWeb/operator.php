@@ -8,6 +8,14 @@ $hasilKali = $a * $b;
 $hasilBagi = $a / $b;
 $sisaBagi = $a % $b;
 $pangkat = $a ** $b;
+
+echo"hasil tambah: $hasiltambah <br>";
+echo"hasil kurang: $hasilKurang <br>";
+echo"hasil kali: $hasilKali <br>";
+echo"hasil bagi: $hasilBagi <br>";
+echo"hasil sisa bagi: $sisaBagi <br>";
+echo"hasil pangkat: $pangkat <br>";
+
 //lanjut
 $hasilSama = $a == $b;
 $hasilTidakSama = $a != $b;
