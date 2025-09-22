@@ -50,9 +50,11 @@ echo"nilai a: $a <br>";
 $a /= $b;
 echo"nilai a: $a <br>";
 $a %= $b;
-echo"nilai a: $a <br>";
+echo"nilai a: $a <br><br>";
 
 //lanjut
 $hasilIdentik = $a === $b;
+echo"hasil identik: $hasilIdentik <br>";
 $hasilTidakIdentik = $a !== $b;
+echo"hasil tidak identik: $hasilTidakIdentik <br>";
 ?>
