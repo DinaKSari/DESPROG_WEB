@@ -62,7 +62,7 @@ for ($i = 2; $i < count($nilaiSiswa) - 2; $i++) {
 $rataRata = $totalNilai / 6;
 
 echo "<br>Total nilai setelah mengabaikan dua nilai tertinggi dan terendah adalah: $totalNilai<br>";
-echo "Nilai rata-rata yang digunakan adalah: $rataRata";
+echo "Nilai rata-rata yang digunakan adalah: $rataRata <br><br>";
 
 //tugas cerita 2
 $hargaProduk = 120000;
@@ -76,4 +76,7 @@ if ($hargaProduk > $syaratDiskon) {
     echo "Anda mendapatkan diskon sebesar: Rp " . $jumlahDiskon . " (20%)<br>";
 }
 echo "Harga yang Harus Dibayar: Rp " . $hargaAkhir;
+
+//ceritaa 3
+$poin = 620;
 ?>
