@@ -14,7 +14,7 @@ echo"hasil kurang: $hasilKurang <br>";
 echo"hasil kali: $hasilKali <br>";
 echo"hasil bagi: $hasilBagi <br>";
 echo"hasil sisa bagi: $sisaBagi <br>";
-echo"hasil pangkat: $pangkat <br>";
+echo"hasil pangkat: $pangkat <br><br>";
 
 //lanjut
 $hasilSama = $a == $b;
@@ -30,4 +30,9 @@ echo"hasil lebih kecil: $hasilLebihKecil <br>";
 echo"hasil lenih besar: $hasilLebihBesar <br>";
 echo"hasil lebih kecil sama: $hasilLebihKecilSama <br>";
 echo"hasil lebih besar sama: $hasilLebihBesarSama <br>";
+//lanjut
+$hasilAnd = $a && $b;
+$hasilOr = $a || $b;
+$hasilNotA = !$a;
+$hasilNotB = !$b;
 ?>
