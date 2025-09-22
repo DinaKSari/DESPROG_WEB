@@ -34,4 +34,8 @@ $apakahSiswaSudahUjian = false;
 var_dump($apakahSiswaLulus);
 echo "<br>";
 var_dump($apakahSiswaSudahUjian);
+
+//lanjutt
+$namaDepan = "Ibnu";
+$namaBelakang = 'Jakaria'
 ?>
