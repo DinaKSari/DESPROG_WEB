@@ -69,4 +69,10 @@ $hargaProduk = 120000;
 $syaratDiskon = 100000;
 $persenDiskon = 20;
 $hargaAkhir = $hargaProduk;
+
+if ($hargaProduk > $syaratDiskon) {
+    $jumlahDiskon = ($persenDiskon / 100) * $hargaProduk;
+    $hargaAkhir = $hargaProduk - $jumlahDiskon;
+    echo "Anda mendapatkan diskon sebesar: Rp " . $jumlahDiskon . " (20%)<br>";
+}
 ?>
