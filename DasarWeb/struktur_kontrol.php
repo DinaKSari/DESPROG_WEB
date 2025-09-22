@@ -79,4 +79,9 @@ echo "Harga yang Harus Dibayar: Rp " . $hargaAkhir;
 
 //ceritaa 3
 $poin = 620;
+if ($poin > 500) {
+    $statusHadiah = "YA";
+} else {
+    $statusHadiah = "TIDAK";
+}
 ?>
