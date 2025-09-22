@@ -79,11 +79,7 @@ echo "Harga yang Harus Dibayar: Rp " . $hargaAkhir;
 
 //ceritaa 3
 $poin = 620;
-if ($poin > 500) {
-    $statusHadiah = "YA";
-} else {
-    $statusHadiah = "TIDAK";
-}
+$statusHadiah = ($poin > 500) ? "YA" : "TIDAK";
 echo "<br><br>Total skor pemain adalah: " . $poin . "<br>";
 echo "Apakah pemain mendapatkan hadiah tambahan? " . $statusHadiah;
 ?>
