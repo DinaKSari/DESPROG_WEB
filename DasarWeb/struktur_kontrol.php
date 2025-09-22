@@ -60,4 +60,7 @@ for ($i = 2; $i < count($nilaiSiswa) - 2; $i++) {
     $totalNilai += $nilaiSiswa[$i];
 }
 $rataRata = $totalNilai / 6;
+
+echo "Total nilai setelah mengabaikan dua nilai tertinggi dan terendah adalah: $totalNilai<br>";
+echo "Nilai rata-rata yang digunakan adalah: $rataRata";
 ?>
