@@ -30,4 +30,8 @@ var_dump($rataRata);
 //lanjutan
 $apakahSiswaLulus = true;
 $apakahSiswaSudahUjian = false;
+
+var_dump($apakahSiswaLulus);
+echo "<br>";
+var_dump($apakahSiswaSudahUjian);
 ?>
