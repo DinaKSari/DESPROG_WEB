@@ -57,4 +57,6 @@ $totalNilai = 0;
 foreach ($daftarSiswa as $siswa) {
     $totalNilai += $siswa[1];
 }
+$jumlahSiswa = count($daftarSiswa);
+$rataRataKelas = $totalNilai / $jumlahSiswa;
 ?>
