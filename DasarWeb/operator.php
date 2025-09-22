@@ -51,4 +51,8 @@ $a /= $b;
 echo"nilai a: $a <br>";
 $a %= $b;
 echo"nilai a: $a <br>";
+
+//lanjut
+$hasilIdentik = $a === $b;
+$hasilTidakIdentik = $a !== $b;
 ?>
