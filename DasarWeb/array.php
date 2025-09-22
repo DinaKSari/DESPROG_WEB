@@ -8,4 +8,8 @@ foreach ($nilaiSiswa as $nilai) {
 }
 
 echo "Daftar nilai siswa yang lulus: " . implode(', ', $nilaiLulus);
+
+//lanjut
+$daftarKaryawan = [['Alice', 7],['Bob', 3],['Charlie', 9],['David', 5],['Eva', 6],];
+
 ?>
