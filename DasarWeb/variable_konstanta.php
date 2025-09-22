@@ -6,4 +6,5 @@ echo "Hasil penjumlahan $angka1 dan $angka2 adalah $hasil";
 
 $benar = true;
 $salah = false;
+echo "variable benar: $benar, variabel salah: $salah";
 ?>
