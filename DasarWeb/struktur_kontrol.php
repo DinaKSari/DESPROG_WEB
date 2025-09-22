@@ -21,5 +21,10 @@ while ($jarakSaatIni < $jarakTarget) {
     $hari++;
 }
 
-echo "Atlet tersebut memerlukan $hari hari untuk mencapai jarak 500 kilometer.";
+echo "<br><br>Atlet tersebut memerlukan $hari hari untuk mencapai jarak 500 kilometer.";
+//lanjutt
+$jumlahLahan = 10;
+$tanamanPerLahan = 5;
+$buahPerTanaman = 10;
+$jumlahBuah = 0;
 ?>
