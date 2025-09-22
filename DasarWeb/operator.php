@@ -9,7 +9,7 @@ $hasilBagi = $a / $b;
 $sisaBagi = $a % $b;
 $pangkat = $a ** $b;
 
-echo"hasil tambah: $hasiltambah <br>";
+echo"hasil tambah: $hasilTambah <br>";
 echo"hasil kurang: $hasilKurang <br>";
 echo"hasil kali: $hasilKali <br>";
 echo"hasil bagi: $hasilBagi <br>";
