@@ -27,4 +27,10 @@ $jumlahLahan = 10;
 $tanamanPerLahan = 5;
 $buahPerTanaman = 10;
 $jumlahBuah = 0;
+
+for ($i = 1; $i <= $jumlahLahan; $i++) {
+    $jumlahBuah += ($tanamanPerLahan * $buahPerTanaman);
+}
+
+echo "<br>Jumlah buah yang akan dipanen adalah: $jumlahBuah";
 ?>
