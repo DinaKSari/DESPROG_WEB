@@ -53,4 +53,8 @@ $daftarSiswa = [
     ['David', 64],
     ['Eva', 90]
 ];
+$totalNilai = 0;
+foreach ($daftarSiswa as $siswa) {
+    $totalNilai += $siswa[1];
+}
 ?>
