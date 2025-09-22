@@ -59,4 +59,7 @@ foreach ($daftarSiswa as $siswa) {
 }
 $jumlahSiswa = count($daftarSiswa);
 $rataRataKelas = $totalNilai / $jumlahSiswa;
+echo "<br><br>Nilai rata-rata kelas adalah: " . $rataRataKelas . "<br><br>";
+echo "Daftar siswa dengan nilai di atas rata-rata:<br>";
+
 ?>
