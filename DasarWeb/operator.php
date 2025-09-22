@@ -40,4 +40,10 @@ echo"hasil AND: $hasilAnd <br>";
 echo"hasil OR: $hasilOr<br>";
 echo"hasil NOT A: $hasilNotA <br>";
 echo"hasil NOT B: $hasilNotB <br>";
+//lanjuttt
+$a += $b;
+$a -= $b;
+$a *= $b;
+$a /= $b;
+$a %= $b;
 ?>
