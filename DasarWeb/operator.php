@@ -62,4 +62,5 @@ echo"hasil tidak identik: $hasilTidakIdentik <br>";
 $totalKursi = 45;
 $kursiDitempati = 28;
 
+$kursiKosong = $totalKursi - $kursiDitempati;
 ?>
