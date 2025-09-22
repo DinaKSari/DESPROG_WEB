@@ -64,4 +64,8 @@ $kursiDitempati = 28;
 
 $kursiKosong = $totalKursi - $kursiDitempati;
 $persentaseKosong = ($kursiKosong / $totalKursi) * 100;
+echo "Jumlah kursi yang tersedia: $totalKursi <br>";
+echo "Jumlah kursi yang ditempati: $kursiDitempati <br>";
+echo "Jumlah kursi yang masih kosong: $kursiKosong <br>";
+echo "Persentase kursi yang masih kosong adalah: $persentaseKosong";
 ?>
