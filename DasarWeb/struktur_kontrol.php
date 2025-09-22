@@ -10,4 +10,9 @@ if ($nilaiNumerik >= 90 && $nilaiNumerik <= 100) {
 } elseif ($nilaiNumerik < 70) {
     echo "Nilai huruf: D";
 }
+//lanjut
+$jarakSaatIni = 0;
+$jarakTarget = 500;
+$peningkatanHarian = 30;
+$hari = 0;
 ?>
