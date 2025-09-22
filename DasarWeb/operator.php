@@ -56,7 +56,7 @@ echo"nilai a: $a <br><br>";
 $hasilIdentik = $a === $b;
 echo"hasil identik: $hasilIdentik <br>";
 $hasilTidakIdentik = $a !== $b;
-echo"hasil tidak identik: $hasilTidakIdentik <br>";
+echo"hasil tidak identik: $hasilTidakIdentik <br><br>";
 
 //pertanyaan
 $totalKursi = 45;
