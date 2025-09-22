@@ -57,4 +57,9 @@ $hasilIdentik = $a === $b;
 echo"hasil identik: $hasilIdentik <br>";
 $hasilTidakIdentik = $a !== $b;
 echo"hasil tidak identik: $hasilTidakIdentik <br>";
+
+//pertanyaan
+$totalKursi = 45;
+$kursiDitempati = 28;
+
 ?>
