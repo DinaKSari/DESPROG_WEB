@@ -75,4 +75,5 @@ if ($hargaProduk > $syaratDiskon) {
     $hargaAkhir = $hargaProduk - $jumlahDiskon;
     echo "Anda mendapatkan diskon sebesar: Rp " . $jumlahDiskon . " (20%)<br>";
 }
+echo "Harga yang Harus Dibayar: Rp " . $hargaAkhir;
 ?>
