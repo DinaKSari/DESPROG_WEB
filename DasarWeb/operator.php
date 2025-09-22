@@ -63,4 +63,5 @@ $totalKursi = 45;
 $kursiDitempati = 28;
 
 $kursiKosong = $totalKursi - $kursiDitempati;
+$persentaseKosong = ($kursiKosong / $totalKursi) * 100;
 ?>
