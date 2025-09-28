@@ -10,9 +10,44 @@
     $Dosen = ['nama' => 'Elok Nur Hamdana',
     'domisili' => 'Malang',
     'jenis_kelamin' => 'Perempuan' ];
-    echo "Nama: {$Dosen ['nama']} <br>";
-    echo "Domisili: {$Dosen ['domisili']} <br>";
-    echo "Jenis Kelamin {$Dosen ['jenis_kelamin']} <br>";
     ?>
+    <table border="1" height="100%" width="40%" cellpadding="20" cellspacing="5">
+        <tr>
+            <td>
+                <?php 
+                    echo "Nama";
+                ?>
+            </td>
+            <td>
+                <?php 
+                    echo "{$Dosen ['nama']}";
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <?php 
+                    echo "Domisili";
+                ?>
+            </td>
+            <td>
+                <?php 
+                    echo "{$Dosen ['domisili']}";
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <?php 
+                    echo "Jenis Kelamin";
+                ?>
+            </td>
+            <td>
+                <?php 
+                    echo "{$Dosen ['jenis_kelamin']}";
+                ?>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
