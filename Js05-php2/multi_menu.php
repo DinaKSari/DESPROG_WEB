@@ -35,8 +35,11 @@ $menu = [
 
 function tampilkanMenuBertingkat (array $menu) {
 echo "<ul>";
-foreach ($menu as $key => $item) {
-echo "<li>{$item['nama']}</li>";
+if (isset($item['subMenu'])){
+  echo "<li>{$item['nama']}";
+  echo "</li>";
+} else{
+  echo "<li>{$item['nama']}</li>";
 }
 echo "</ul>";
 }
