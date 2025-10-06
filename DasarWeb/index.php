@@ -5,7 +5,7 @@ $host = 'localhost';
 $port = '5432';
 $dbname = 'phpdatabase';
 $user = 'postgres';
-$pass = '12345';
+$pass = 'apayah34.';
 
 // Membuat koneksi
 $conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass");
