@@ -13,3 +13,10 @@ body{
     height: 200px;
     border: 1px solid black;
 }
+#Character{
+    width: 20px;
+    height: 50px;
+    background-color: blue;
+    position: relative;
+    top: 150px;
+}
