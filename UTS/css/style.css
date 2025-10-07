@@ -19,6 +19,7 @@ body{
     background-color: blue;
     position: relative;
     top: 150px;
+    left: 30px;
 }
 .animate{
     animation: jump 500ms;
