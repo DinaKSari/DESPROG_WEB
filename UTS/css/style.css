@@ -28,3 +28,11 @@ body{
     top: 130px;
     left: 480px;
 }
+@keyframes block {
+    0%{
+        left: 480px;
+    }
+    100%{
+        left: 0px;
+    }
+}
