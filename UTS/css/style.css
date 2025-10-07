@@ -27,6 +27,7 @@ body{
     position: relative;
     top: 130px;
     left: 480px;
+    animation: block 1s infinite linear;
 }
 @keyframes block {
     0%{
