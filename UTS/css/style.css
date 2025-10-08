@@ -36,13 +36,13 @@ body{
 #block{
     width: 20px;
     height: 20px;
-    background-color: red;
+    background-image: url('../img/slime.png');
     position: relative;
     top: 130px;
     left: 480px;
 }
 .blockAnimate{
-    animation: block 1s infinite linear;
+    animation: block 3s infinite linear;
 }
 @keyframes jump {
     0%{top: 150px;}
