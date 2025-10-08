@@ -1,5 +1,10 @@
 var character= document.getElementById("character");
 var block= document.getElementById("block");
+function start(){
+    if(block.classList != "blockAnimate"){
+        block.classList.add("blockAnimate");
+    }
+}
 function jump(){
     if(character.classList != "animate"){
         character.classList.add("animate");

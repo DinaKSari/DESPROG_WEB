@@ -43,7 +43,6 @@ body{
     position: relative;
     top: 130px;
     left: 480px;
-    
 }
 .blockAnimate{
     animation: block 1s infinite linear;
