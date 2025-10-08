@@ -42,7 +42,7 @@ body{
     left: 480px;
 }
 .blockAnimate{
-    animation: block 1.9s infinite linear, slimeAnimate 0.5s infinite;
+    animation: block 1.9s infinite linear, slimeAnimate 500ms infinite;
 }
 @keyframes jump {
     0%{top: 150px;}
