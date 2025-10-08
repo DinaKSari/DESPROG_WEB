@@ -22,6 +22,7 @@ let checkDead= setInterval(function(){
     const characterTop= parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     const blockLeft= parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     if(blockLeft< 20 && blockLeft>0 && characterTop>= 130){
+        block.classList.remove("blockAnimate");
         block.style.display = "none";
         alert("Anda Kalah!");
     }
