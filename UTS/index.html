@@ -7,8 +7,8 @@
     <title>UTS Dina</title>
 </head>
 <body>
-    <div id="replay">
-        <img src="img/replay.png" id="replayButton" onclick="document.getElementById('replayButton').src=('img/replayClick.png')">
+    <div id="replay" onclick="replay()">
+        <img src="img/replay.png" id="replayButton" onmousedown="document.getElementById('replayButton').src=('img/replayClick.png')" onmouseup="document.getElementById('replayButton').src=('img/replay.png')">
     </div>
     <div id="game">
         <div id="character">
@@ -19,7 +19,7 @@
         </div>
     </div>
     <div id="start" onclick="start()">
-        <img src="img/start.png" id="buttonStart" onclick="document.getElementById('buttonStart').src=('img/startClick.png')">
+        <img src="img/start.png" id="buttonStart" onmousedown="document.getElementById('buttonStart').src=('img/startClick.png')" onmouseup="document.getElementById('buttonStart').src=('img/start.png')">
     </div>
 </body>
 <script src="js/script.js"></script>
