@@ -6,7 +6,9 @@ function start(){
     }
 }
 function replay(){
-    
+    if(block.style.display=== "none"){
+        block.style.display= "block";
+    }
 }
 function jump(){
     if(character.classList != "animate"){
