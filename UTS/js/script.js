@@ -8,3 +8,6 @@ function jump(){
         character.classList.remove("animate");
     }, 500);
 }
+var checkDead= setInterval(function(){
+
+}, 10)
