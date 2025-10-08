@@ -42,12 +42,18 @@ body{
     left: 480px;
 }
 .blockAnimate{
-    animation: block 3s infinite linear;
+    animation: block 1.9s infinite linear;
 }
 @keyframes jump {
     0%{top: 150px;}
-    30%{top: 100px;}
-    70%{top: 100;}
+    20%{top: 135px;}
+    30%{top: 95px;}
+    40%{top: 65px;}
+    50%{top: 40px;}
+    60%{top: 40px;}
+    70%{top: 85px;}
+    80%{top: 105px;}
+    90%{top: 135px;}
     100%{top: 150px;}
 }
 @keyframes block {
