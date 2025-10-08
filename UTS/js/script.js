@@ -9,5 +9,11 @@ function jump(){
     }, 500);
 }
 var checkDead= setInterval(function(){
-
-}, 10)
+    var characterTop= parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    var blockLeft= parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+    if(blockLeft< 20 && blockLeft>0 && characterTop>= 130){
+        block.style.animation = "none";
+        block.style.display = "none";
+        alert("Anda Kalah!");
+    }
+}, 10);
