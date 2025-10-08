@@ -7,19 +7,23 @@
     <title>UTS Dina</title>
 </head>
 <body>
-    <div id="replay" onclick="replay()">
-        <img src="img/replay.png" id="replayButton" onmousedown="document.getElementById('replayButton').src=('img/replayClick.png')" onmouseup="document.getElementById('replayButton').src=('img/replay.png')">
-    </div>
-    <div id="game">
-        <div id="character">
-
-        </div>
-        <div id="block">
-
+    <div id="inGame">
+        <div id="game">
+            <div id="character"></div>
+            <div id="block"></div>
         </div>
     </div>
-    <div id="start" onclick="start()">
-        <img src="img/start.png" id="buttonStart" onmousedown="document.getElementById('buttonStart').src=('img/startClick.png')" onmouseup="document.getElementById('buttonStart').src=('img/start.png')">
+    <div id="outGame">
+        <div id="start" onclick="start()">
+            <img src="img/start.png" id="buttonStart" 
+            onmousedown="document.getElementById('buttonStart').src=('img/startClick.png')" 
+            onmouseup="document.getElementById('buttonStart').src=('img/start.png')">
+        </div>
+        <div id="replay" onclick="replay()">
+            <img src="img/replay.png" id="replayButton" 
+            onmousedown="document.getElementById('replayButton').src=('img/replayClick.png')" 
+            onmouseup="document.getElementById('replayButton').src=('img/replay.png')">
+        </div>
     </div>
 </body>
 <script src="js/script.js"></script>
