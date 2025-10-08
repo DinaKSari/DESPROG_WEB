@@ -42,7 +42,7 @@ body{
     left: 480px;
 }
 .blockAnimate{
-    animation: block 1.9s infinite linear;
+    animation: block 1.9s infinite linear, slimeAnimate 0.5s infinite;
 }
 @keyframes jump {
     0%{top: 150px;}
@@ -63,4 +63,13 @@ body{
     100%{
         left: 0px;
     }
+}
+@keyframes slimeAnimate{
+    0%{background-image: url('../img/slime.png');}
+    30%{background-image: url('../img/slime.png');}
+    40%{background-image: url('../img/slimeDown.png');}
+    50%{background-image: url('../img/slimeDown.png');}
+    60%{background-image: url('../img/slimeDown.png');}
+    90%{background-image: url('../img/slime.png');}
+    100%{background-image: url('../img/slime.png');}
 }
