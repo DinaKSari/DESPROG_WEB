@@ -25,7 +25,7 @@ body{
 #character{
     width: 20px;
     height: 50px;
-    background-color: blue;
+    background-image: url('../img/player.png');
     position: relative;
     top: 150px;
     left: 30px;
