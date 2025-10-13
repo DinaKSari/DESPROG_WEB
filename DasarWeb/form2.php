@@ -11,7 +11,9 @@
     <p>Coba masukkan kode HTML seperti <strong>&lt;h1&gt;Ini Judul&lt;/h1&gt;</strong> atau <strong>&lt;script&gt;alert('Halo!')&lt;/script&gt;</strong></p>
 
     <form action="html_aman.php" method="POST">
-        <input type="text" name="input" size="50">
+        <input type="text" name="input" size="50"><br><br>
+        <p>masukan email</p>
+        <input type="email" name="email" id="">
         <button type="submit">Kirim</button>
     </form>
 
