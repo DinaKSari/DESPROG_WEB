@@ -14,6 +14,9 @@
         <label for="email">Email:</label>
         <input type="text" id="email" name="email">
         <span id="email-error" style="color: red;"></span><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <span id="password-error" style="color: red;"></span><br>
 
         <input type="submit" value="Submit">
     </form>
