@@ -14,7 +14,6 @@
     align-items: center;
     position: relative;
     height: 150px;
-    background-color: brown;
 }
 #start{
     display: flex;
@@ -56,15 +55,24 @@
 }
 @keyframes jump {
     0%{top: 150px;}
-    20%{top: 135px;}
-    30%{top: 95px;}
-    40%{top: 65px;}
-    50%{top: 40px;}
-    60%{top: 40px;}
-    70%{top: 85px;}
-    80%{top: 105px;}
-    90%{top: 135px;}
-    100%{top: 150px;}
+    20%{
+        top: 135px;
+        background-image: url('../img/playerJump.png');
+    }
+    30%{
+        top: 95px;
+        background-image: url('../img/playerJump.png');
+    }
+    40%{top: 65px; background-image: url('../img/playerJump.png');}
+    50%{top: 40px; background-image: url('../img/playerJump.png');}
+    60%{top: 40px; background-image: url('../img/playerJump.png');}
+    70%{top: 85px; background-image: url('../img/playerJump.png');}
+    80%{top: 105px; background-image: url('../img/playerJump.png');}
+    90%{top: 135px; background-image: url('../img/playerJump.png');}
+    100%{
+        top: 150px;
+        background-image: url('../img/player.png');
+    }
 }
 @keyframes block {
     0%{
