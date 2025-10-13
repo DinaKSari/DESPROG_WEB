@@ -6,6 +6,7 @@ let scoreTimer;
 function start(){
     if(block.classList != "blockAnimate"){
         block.classList.add("blockAnimate");
+        startScore();
     }
 }
 function replay(){
@@ -27,6 +28,21 @@ let checkDead= setInterval(function(){
     if(blockLeft< 20 && blockLeft>0 && characterTop>= 130){
         block.classList.remove("blockAnimate");
         block.style.display = "none";
-        alert("Anda Kalah!");
+        stopScore();
+        alert("Anda Kalah! Skor Anda: " + score);
     }
 }, 10);
+
+function startScore() {
+    clearInterval(scoreTimer);
+    score = 0;
+    scoreDisplay.innerHTML = "Score: " + score;
+    scoreTimer = setInterval(() => {
+        score++;
+        scoreDisplay.innerHTML = "Score: " + score;
+    }, 500);
+}
+
+function stopScore() {
+    clearInterval(scoreTimer);
+}
