@@ -11,6 +11,13 @@
     background-image: url('../img/background.png');
     background-size: cover;
 }
+#score{
+    left: 15px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
 #button{
     display: flex;
     justify-content: center;
