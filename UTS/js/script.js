@@ -3,15 +3,19 @@ let block= document.getElementById("block");
 let score = 0;
 let scoreDisplay = document.getElementById("score");
 let scoreTimer;
+let canStart = true;
 function start(){
-    if(block.classList != "blockAnimate"){
+    if(block.classList != "blockAnimate" && canStart === true){
         block.classList.add("blockAnimate");
         startScore();
+    } else{
+        alert("Tekan tombol replay terlebih dahulu!")
     }
 }
 function replay(){
     if(block.style.display=== "none"){
         block.style.display= "block";
+        canStart = true;
     }
 }
 function jump(){
@@ -29,6 +33,7 @@ let checkDead= setInterval(function(){
         block.classList.remove("blockAnimate");
         block.style.display = "none";
         stopScore();
+        canStart = false;
         alert("Anda Kalah! Skor Anda: " + score);
     }
 }, 10);
