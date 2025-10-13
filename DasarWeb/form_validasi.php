@@ -47,7 +47,7 @@
         // Menghentikan pengiriman form jika validasi gagal
     });
 });
-*/
+
 $(document).ready(function () {
   $("#myForm").submit(function (event) {
     event.preventDefault(); // Mencegah reload halaman
@@ -80,6 +80,57 @@ $(document).ready(function () {
         success: function (response) {
           alert("Data berhasil dikirim: " + response);
           $("#myForm")[0].reset(); // Kosongkan form setelah sukses
+        },
+        error: function () {
+          alert("Terjadi kesalahan saat mengirim data!");
+        }
+      });
+    }
+  });
+});
+*/
+$(document).ready(function () {
+  $("#myForm").submit(function (event) {
+    event.preventDefault(); // Mencegah reload halaman
+
+    var nama = $("#nama").val();
+    var email = $("#email").val();
+    var password = $("#password").val();
+    var valid = true;
+
+    // Validasi Nama
+    if (nama === "") {
+      $("#nama-error").text("Nama harus diisi.");
+      valid = false;
+    } else {
+      $("#nama-error").text("");
+    }
+
+    // Validasi Email
+    if (email === "") {
+      $("#email-error").text("Email harus diisi.");
+      valid = false;
+    } else {
+      $("#email-error").text("");
+    }
+
+    // Validasi Password 
+    if (password.length < 8) {
+      $("#password-error").text("Password minimal 8 karakter.");
+      valid = false;
+    } else {
+      $("#password-error").text("");
+    }
+
+    // Jika validasi berhasil, kirim via AJAX
+    if (valid) {
+      $.ajax({
+        url: "proses_validasi.php",
+        type: "POST",
+        data: { nama: nama, email: email, password: password },
+        success: function (response) {
+          alert("Data berhasil dikirim: " + response);
+          $("#myForm")[0].reset();
         },
         error: function () {
           alert("Terjadi kesalahan saat mengirim data!");
