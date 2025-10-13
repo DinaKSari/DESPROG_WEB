@@ -1,5 +1,8 @@
 let character= document.getElementById("character");
 let block= document.getElementById("block");
+let score = 0;
+let scoreDisplay = document.getElementById("score");
+let scoreTimer;
 function start(){
     if(block.classList != "blockAnimate"){
         block.classList.add("blockAnimate");
