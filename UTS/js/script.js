@@ -9,7 +9,7 @@ function start(){
         block.classList.add("blockAnimate");
         startScore();
     } else{
-        alert("Tekan tombol replay terlebih dahulu!")
+        alert("Tekan tombol replay terlebih dahulu!");
     }
 }
 function replay(){
