@@ -2,7 +2,7 @@
 if (isset($_FILES['files'])) {
     $extensions = array("pdf", "doc", "docx", "txt");
     $maxSize = 2 * 1024 * 1024; // 2 MB
-    $uploadDir = "documents/";
+    $uploadDir = "uploads/";
 
     // Pastikan direktori ada
     if (!file_exists($uploadDir)) {
