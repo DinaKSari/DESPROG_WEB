@@ -7,19 +7,27 @@ if (!file_exists($targetDirectory)) {
     mkdir($targetDirectory, 0777, true);
 }
 
-if ($_FILES['files']['name'][0]) {
+if (isset($_FILES['files']['name'][0])) {
     $totalFiles = count($_FILES['files']['name']);
 
-    // loop melalui semua file yang diunggah
+    // Daftar ekstensi yang diizinkan
+    $allowedExtensions = array("jpg", "jpeg", "png", "gif");
+
     for ($i = 0; $i < $totalFiles; $i++) {
         $fileName = $_FILES['files']['name'][$i];
-        $targetFile = $targetDirectory . $fileName;
+        $targetFile = $targetDirectory . basename($fileName);
+        $fileExtension = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-        // Pindahkan file yang diunggah ke direktori penyimpanan
-        if (move_uploaded_file($_FILES['files']['tmp_name'][$i], $targetFile)) {
-            echo "File $fileName berhasil diunggah.<br>";
+        // Periksa apakah ekstensi file sesuai
+        if (in_array($fileExtension, $allowedExtensions)) {
+            // Pindahkan file yang diunggah ke direktori penyimpanan
+            if (move_uploaded_file($_FILES['files']['tmp_name'][$i], $targetFile)) {
+                echo "File <b>$fileName</b> berhasil diunggah.<br>";
+            } else {
+                echo "Gagal mengunggah file <b>$fileName</b>.<br>";
+            }
         } else {
-            echo "Gagal mengunggah file $fileName.<br>";
+            echo "File <b>$fileName</b> tidak diizinkan. Hanya jpg, jpeg, png, dan gif yang diperbolehkan.<br>";
         }
     }
 } else {
