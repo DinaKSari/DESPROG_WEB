@@ -66,9 +66,11 @@ $rows = pg_fetch_all($res) ?: [];
                                 </td>
                                 <td class="text-center">
                                     <a href="edit.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
-                                    <form action="delete.php" method="POST">
-                                        <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                                        <button type="submit" style="btn btn-sm btn-outline-danger">Hapus</button>
+                                    <form action="delete.php" method="POST" style="display: inline;" onsubmit="return confirm('Hapus data ini?')">
+                                        <input type="hidden" name="id" value="<?= $r['id'] ?>">
+                                        <button type="submit" class="btn btn-sm btn-outline-danger">
+                                            Hapus
+                                        </button>
                                     </form>
                                 </td>
                             </tr>
