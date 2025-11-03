@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tanggalKembali = trim($_POST['tanggal_kembali'] ?? '');
     $status = trim($_POST['status'] ?? '');
 
-    if ($nim === '' || $nama === '' || $judul === '' ) {
+    if ($nim === '' || $nama === '' || $judul === '' || $tanggalPinjam === '') {
         $err = 'NIM, Nama, judul buku dan tanggal peminjaman wajib diisi.';
     } else {
         try {
