@@ -42,9 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             qparams(
                 'UPDATE public.peminjaman
-                   SET nim=$1, nama_mahasiswa=$2, judul_buku=$3, tanggal_pinjam=$, jurusan=NULLIF($4, \'\')
-                 WHERE id=$5',
-                [$nim, $nama, $email, $jurusan, $id]
+                   SET nim=$1, nama_mahasiswa=$2, judul_buku=$3, tanggal_pinjam=$4, tanggal_kembali=$5, status=$6
+                 WHERE id=$7',
+                [$nim, $nama, $judul, $tanggalPinjam, $tanggalKembaliKosong, $status]
             );
             header('Location: index.php');
             exit;
