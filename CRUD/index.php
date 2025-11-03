@@ -65,8 +65,8 @@ $rows = pg_fetch_all($res) ?: [];
                                     <span class="badge <?= $badgeClass ?>"><?= $status ?></span>
                                 </td>
                                 <td class="text-center">
-                                    <a href="edit_peminjaman.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
-                                    <a href="hapus_peminjaman.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Hapus data ini?')">Hapus</a>
+                                    <a href="edit.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
+                                    <a href="delete.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Hapus data ini?')">Hapus</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
