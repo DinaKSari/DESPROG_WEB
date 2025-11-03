@@ -20,7 +20,7 @@ $rows = pg_fetch_all($res) ?: [];
 <div class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Data Peminjaman Buku</h2>
-        <a href="tambah_peminjaman.php" class="btn btn-primary">+ Tambah Peminjaman</a>
+        <a href="create.php" class="btn btn-primary">+ Tambah Peminjaman</a>
     </div>
 
     <div class="card shadow-sm">
