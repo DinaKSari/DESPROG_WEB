@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $err = 'NIM, Nama, judul buku dan tanggal peminjaman wajib diisi.';
     } else {
         try {
+            $tanggalKembaliKosong = ($tanggalKembali === '') ? null : $tanggalKembali;
             qparams(
                 'UPDATE public.peminjaman
                    SET nim=$1, nama_mahasiswa=$2, judul_buku=$3, tanggal_pinjam=$4, tanggal_kembali=$5, status=$6
@@ -54,3 +55,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Data Peminjaman</title>
+</head>
+<body>
+    <h2>Edit Data Peminjaman</h2>
+
+    <?php if ($err): ?>
+        <p style="color: red;"><?= htmlspecialchars($err) ?></p>
+    <?php endif; ?>
+
+    <form method="POST" action="">
+        <label>NIM:</label><br>
+        <input type="text" name="nim" value="<?= htmlspecialchars($nim) ?>"><br><br>
+
+        <label>Nama Mahasiswa:</label><br>
+        <input type="text" name="nama_mahasiswa" value="<?= htmlspecialchars($nama) ?>"><br><br>
+
+        <label>Judul Buku:</label><br>
+        <input type="text" name="judul_buku" value="<?= htmlspecialchars($judul) ?>"><br><br>
+
+        <label>Tanggal Pinjam:</label><br>
+        <input type="date" name="tanggal_pinjam" value="<?= htmlspecialchars($tanggalPinjam) ?>"><br><br>
+
+        <label>Tanggal Kembali (Opsional):</label><br>
+        <input type="date" name="tanggal_kembali" value="<?= htmlspecialchars($tanggalKembali) ?>"><br><br>
+
+        <label>Status:</label><br>
+        <select name="status">
+            <option value="">-- Pilih Status --</option>
+            <option value="dipinjam" <?= $status === 'dipinjam' ? 'selected' : '' ?>>Dipinjam</option>
+            <option value="dikembalikan" <?= $status === 'dikembalikan' ? 'selected' : '' ?>>Dikembalikan</option>
+            <option value="terlambat" <?= $status === 'terlambat' ? 'selected' : '' ?>>Terlambat</option>
+        </select><br><br>
+
+        <button type="submit">Simpan</button>
+    </form>
+
+    <p><a href="index.php">Kembali ke Daftar</a></p>
+</body>
+</html>
