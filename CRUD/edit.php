@@ -22,7 +22,7 @@ try {
 }
 
 $nim = $row['nim'];
-$nama = $row['nama'];
+$nama = $row['nama_mahasiswa'];
 $judul = $row['judul_buku'];
 $tanggalPinjam = $row['tanggal_pinjam'];
 $tanggalKembali = $row['tanggal_kembali'];
@@ -30,7 +30,7 @@ $status = $row['status'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nim     = trim($_POST['nim'] ?? '');
-    $nama    = trim($_POST['nama'] ?? '');
+    $nama    = trim($_POST['nama_mahasiswa'] ?? '');
     $judul   = trim($_POST['judul_buku'] ?? '');
     $tanggalPinjam = trim($_POST['tanggal_pinjam'] ?? '');
     $tanggalKembali = trim($_POST['tanggal_kembali'] ?? '');
@@ -43,9 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $tanggalKembaliKosong = ($tanggalKembali === '') ? null : $tanggalKembali;
             qparams(
                 'UPDATE public.peminjaman
-                   SET nim=$1, nama_mahasiswa=$2, judul_buku=$3, tanggal_pinjam=$4, tanggal_kembali=$5, status=$6
-                 WHERE id=$7',
-                [$nim, $nama, $judul, $tanggalPinjam, $tanggalKembaliKosong, $status]
+                   SET nim=$1, nama_mahasiswa=$2, judul_buku=$3, tanggal_pinjam=$4, tanggal_kembali=$5, status=$6 WHERE id=$7',
+                [$nim, $nama, $judul, $tanggalPinjam, $tanggalKembaliKosong, $status, $id]
             );
             header('Location: index.php');
             exit;
