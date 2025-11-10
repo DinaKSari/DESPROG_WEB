@@ -37,12 +37,12 @@ $search = '';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="peminjaman.php">
+          <a class="nav-link" href="dashboard.php">
             <i class="bi bi-book-fill"></i> Data Peminjaman
           </a>
         </li>
       </ul>
-      <form class="d-flex" role="search" action="peminjaman.php" method="GET">
+      <form class="d-flex" role="search" action="dashboard.php" method="GET">
         <input class="form-control me-2" type="search" name="search" placeholder="Cari peminjam/buku..." aria-label="Search" value="<?= htmlspecialchars($search) ?>">
         <button class="btn btn-outline-success" type="submit">Cari</button>
       </form>
