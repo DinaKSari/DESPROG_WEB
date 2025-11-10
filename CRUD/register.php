@@ -7,7 +7,7 @@ if (isset($_SESSION['user_id'])) {
     exit;
 }
 
-// buat CSRF token sederhana jika belum ada
+// buat CSRF token
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
