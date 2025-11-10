@@ -1,116 +1,95 @@
 <?php
 require __DIR__ . '/koneksi.php';
 
-// Query gabungan
-$res = q('select id, nama_mahasiswa, nim, judul_buku, tanggal_pinjam, tanggal_kembali, status from public.peminjaman order by id desc');
+$res_total = q("SELECT COUNT(*) as total FROM public.peminjaman");
+$total_peminjaman = pg_fetch_assoc($res_total)['total'] ?? 0;
 
-$rows = pg_fetch_all($res) ?: [];
+$res_dipinjam = qparams("SELECT COUNT(*) as total FROM public.peminjaman WHERE status = $1", ['dipinjam']);
+$total_dipinjam = pg_fetch_assoc($res_dipinjam)['total'] ?? 0;
+
+$res_mahasiswa = q("SELECT COUNT(DISTINCT nim) as total FROM public.peminjaman");
+$total_mahasiswa = pg_fetch_assoc($res_mahasiswa)['total'] ?? 0;
+
+$search = '';
 ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Peminjaman</title>
-
+    <title>Dashboard Perpustakaan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark"">
+
+<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">HOME</a>
+    <a class="navbar-brand" href="index.php">Perpustakaan Digital</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php">
+            <i class="bi bi-house-door-fill"></i> Dashboard
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Link
+          <a class="nav-link" href="peminjaman.php">
+            <i class="bi bi-book-fill"></i> Data Peminjaman
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="d-flex" role="search" action="peminjaman.php" method="GET">
+        <input class="form-control me-2" type="search" name="search" placeholder="Cari peminjam/buku..." aria-label="Search" value="<?= htmlspecialchars($search) ?>">
+        <button class="btn btn-outline-success" type="submit">Cari</button>
       </form>
     </div>
   </div>
 </nav>
-
 <div class="container py-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="mb-0">Data Peminjaman Buku</h2>
-        <a href="create.php" class="btn btn-primary">+ Tambah Peminjaman</a>
-    </div>
-
-    <div class="card shadow-sm">
-        <div class="card-body p-0">
-            <table class="table table-striped table-hover mb-0">
-                <thead class="table-dark">
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nama Mahasiswa</th>
-                        <th scope="col">NIM</th>
-                        <th scope="col">Judul Buku</th>
-                        <th scope="col">Tanggal Pinjam</th>
-                        <th scope="col">Tanggal Kembali</th>
-                        <th scope="col">Status</th>
-                        <th scope="col" class="text-center">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php if (empty($rows)): ?>
-                        <tr>
-                            <td colspan="8" class="text-center py-4 text-muted">Tidak ada data peminjaman.</td>
-                        </tr>
-                    <?php else: ?>
-                        <?php foreach ($rows as $r): ?>
-                            <tr>
-                                <td><?= htmlspecialchars($r['id']) ?></td>
-                                <td><?= htmlspecialchars($r['nama_mahasiswa']) ?></td>
-                                <td><?= htmlspecialchars($r['nim']) ?></td>
-                                <td><?= htmlspecialchars($r['judul_buku']) ?></td>
-                                <td><?= htmlspecialchars($r['tanggal_pinjam']) ?></td>
-                                <td><?= htmlspecialchars($r['tanggal_kembali'] ?? '') ?></td>
-                                <td>
-                                    <?php
-                                        $status = htmlspecialchars($r['status']);
-                                        $badgeClass = match($status) {
-                                            'dipinjam'    => 'bg-warning text-dark',
-                                            'dikembalikan'=> 'bg-success',
-                                            'terlambat'   => 'bg-danger',
-                                            default       => 'bg-secondary'
-                                        };
-                                    ?>
-                                    <span class="badge <?= $badgeClass ?>"><?= $status ?></span>
-                                </td>
-                                <td class="text-center">
-                                    <a href="edit.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
-                                    <form action="delete.php" method="POST" style="display: inline;" onsubmit="return confirm('Hapus data ini?')">
-                                        <input type="hidden" name="id" value="<?= $r['id'] ?>">
-                                        <button type="submit" class="btn btn-sm btn-outline-danger">
-                                            Hapus
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                </tbody>
-            </table>
+    <h2 class="mb-4">Dashboard Ringkasan</h2>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title text-muted">Total Transaksi</h5>
+                            <h2 class="display-6 fw-bold"><?= $total_peminjaman ?></h2>
+                        </div>
+                        <i class="bi bi-journal-text" style="font-size: 3rem; color: #0d6efd;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title text-muted">Buku Dipinjam</h5>
+                            <h2 class="display-6 fw-bold"><?= $total_dipinjam ?></h2>
+                        </div>
+                        <i class="bi bi-book" style="font-size: 3rem; color: #ffc107;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title text-muted">Total Anggota</h5>
+                            <h2 class="display-6 fw-bold"><?= $total_mahasiswa ?></h2>
+                        </div>
+                        <i class="bi bi-people-fill" style="font-size: 3rem; color: #198754;"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
