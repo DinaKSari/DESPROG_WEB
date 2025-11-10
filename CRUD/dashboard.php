@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}
+
 require __DIR__ . '/koneksi.php';
 $search = $_GET['search'] ?? ''; 
 
@@ -50,11 +56,20 @@ $rows = pg_fetch_all($res) ?: [];
           </a>
         </li>
       </ul>
+      
       <form class="d-flex" role="search" action="dashboard.php" method="GET">
         <input class="form-control me-2" type="search" name="search" placeholder="Cari peminjam/buku..." aria-label="Search" value="<?= htmlspecialchars($search) ?>">
         <button class="btn btn-outline-success" type="submit">Cari</button>
       </form>
-    </div>
+
+      <?php if (isset($_SESSION['user_id'])): ?>
+        <div class="ms-2">
+            <a href="logout.php" class="btn btn-outline-danger">
+                <i class="bi bi-box-arrow-right"></i> Log Out
+            </a>
+        </div>
+      <?php endif; ?>
+      </div>
   </div>
 </nav>
 <div class="container py-4">

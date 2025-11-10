@@ -1,4 +1,15 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}
+if (isset($_SESSION['nama_user'])) {
+    $nama_user = $_SESSION['nama_user'];
+} else {
+    $nama_user = "Tamu";
+}
+
 require __DIR__ . '/koneksi.php';
 
 $res_total = q("SELECT COUNT(*) as total FROM public.peminjaman");
@@ -42,15 +53,31 @@ $search = '';
           </a>
         </li>
       </ul>
+      
       <form class="d-flex" role="search" action="dashboard.php" method="GET">
         <input class="form-control me-2" type="search" name="search" placeholder="Cari peminjam/buku..." aria-label="Search" value="<?= htmlspecialchars($search) ?>">
         <button class="btn btn-outline-success" type="submit">Cari</button>
       </form>
-    </div>
+
+      <?php if (isset($_SESSION['user_id'])): ?>
+        <div class="ms-2">
+            <a href="logout.php" class="btn btn-outline-danger">
+                <i class="bi bi-box-arrow-right"></i> Log Out
+            </a>
+        </div>
+      <?php endif; ?>
+      </div>
   </div>
 </nav>
+
 <div class="container py-4">
-    <h2 class="mb-4">Dashboard Ringkasan</h2>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="mb-0">Dashboard Ringkasan</h2>
+      <h4 class="mb-0 fw-normal text-muted">
+        Selamat datang kembali, <strong><?= htmlspecialchars($nama_user) ?></strong>!
+      </h4>
+    </div>
+
     <div class="row">
         <div class="col-md-4 mb-3">
             <div class="card shadow-sm">
