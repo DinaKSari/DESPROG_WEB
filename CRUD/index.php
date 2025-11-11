@@ -72,7 +72,7 @@ $search = '';
 
 <div class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
-      <h2 class="mb-0">Dashboard Ringkasan</h2>
+      <h2 class="mb-0">Ringkasan Data</h2>
       <h4 class="mb-0 fw-normal text-muted">
         Selamat datang kembali, <strong><?= htmlspecialchars($nama_user) ?></strong>!
       </h4>

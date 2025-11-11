@@ -14,7 +14,7 @@ $params = [];
 if (!empty($search)) {
     $sql .= " WHERE nama_mahasiswa ILIKE $1 OR nim ILIKE $1 OR judul_buku ILIKE $1";
     $params[] = '%' . $search . '%'; 
-}
+} 
 
 $sql .= ' order by id desc';
 
